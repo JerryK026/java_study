@@ -37,7 +37,43 @@ class Point <X, Y> {
 	}
 }
 
+class Array {
+	public <T extends Comparable> T getMax(T[] a){
+		if (a == null || a.length == 0) {
+			return null;
+		}
+		T largest = a[0];
+		for(int i = 0; i < a.length; i++) {
+			if(largest.compareTo(a[i]) < 0) {
+				largest = a[i];
+			}
+		}
+		
+		return largest;
+	}
+	
+	public <T> int sub(T inputData, T D) {
+		int result;
+		result = (int)inputData - (int)D;
+		return result;
+		
+	}
+		
+	public <T> void displayArray(T[] input_array) {
+		int input_array_length = input_array.length;
+		
+		for(Object elem: input_array) {
+			System.out.println(elem + " ");
+		}
+//		for(int i = 0; i < input_array_length; i++) {
+//			System.out.println(input_array[i] + " ");
+//		}
+	}
+}
+
 public class genericTest {
+
+	
 	public static void main(String args[]) {
 		// ex1
 		int Rec;
